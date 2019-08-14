@@ -23,26 +23,10 @@
  * @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
 /**
- * Downloadable product type
- *
- * @see Mage_Downloadable_Block_Catalog_Product_View_Type
+ * @var $this Mage_ConfigurableSwatches_Block_Catalog_Product_List_Price
  */
 ?>
-<?php $_product = $this->getProduct() ?>
-
-<?php if($_product->isSaleable()): ?>
-    <p class="availability in-stock">
-        <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-        <span class="value"><?php echo $this->helper('catalog')->__('In stock') ?></span>
-    </p>
-<?php else: ?>
-    <p class="availability out-of-stock">
-        <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-        <span class="value"><?php echo $this->helper('catalog')->__('Out of stock') ?></span>
-    </p>
-<?php endif; ?>
-<?php echo $this->getChildHtml('product_type_data_extra') ?>
-<?php //echo $this->getPriceHtml($_product) ?>
-<?php //echo $this->getChildHtml('samples') ?>
+<script type="text/javascript">
+    new ConfigurableSwatchPrices(<?php echo $this->getJsonConfig(); ?>);
+</script>
